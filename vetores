@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class AnaliseVetor {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] vetor = new int[10];
+
+        // Leitura dos 10 números inteiros
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite o " + (i + 1) + "º número inteiro: ");
+            vetor[i] = scanner.nextInt();
+        }
+
+        // Encontrar o maior e o menor número
+        int maior = vetor[0];
+        int menor = vetor[0];
+        for (int i = 1; i < 10; i++) {
+            if (vetor[i] > maior) {
+                maior = vetor[i];
+            }
+            if (vetor[i] < menor) {
+                menor = vetor[i];
+            }
+        }
+
+        // Calcular a média
+        double soma = 0;
+        for (int numero : vetor) {
+            soma += numero;
+        }
+        double media = soma / 10;
+
+        // Exibir os resultados
+        System.out.println("Maior número: " + maior);
+        System.out.println("Menor número: " + menor);
+        System.out.println("Média dos valores: " + media);
+
+        scanner.close();
+    }
+}

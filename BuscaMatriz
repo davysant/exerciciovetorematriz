@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class BuscaMatriz {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[][] matriz = new int[3][3];
+
+        // Leitura da matriz 3x3
+        System.out.println("Digite os elementos da matriz 3x3:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("Elemento [" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Leitura do número a ser procurado
+        System.out.print("Digite o número a ser procurado: ");
+        int numeroProcurado = scanner.nextInt();
+
+        // Busca do número na matriz
+        boolean encontrado = false;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matriz[i][j] == numeroProcurado) {
+                    System.out.println("Número encontrado na posição [" + i + "][" + j + "]");
+                    encontrado = true;
+                }
+            }
+        }
+
+        // Se o número não for encontrado
+        if (!encontrado) {
+            System.out.println("Número não encontrado na matriz.");
+        }
+
+        scanner.close();
+    }
+}
